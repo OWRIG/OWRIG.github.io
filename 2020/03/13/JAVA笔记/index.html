@@ -1,0 +1,738 @@
+<!DOCTYPE html>
+
+<html lang="zh-CN">
+
+<head>
+  
+  <title>JAVA笔记 - Rig的博客</title>
+  <meta charset="UTF-8">
+  <meta name="description" content="用于分享生活">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5">
+  
+  
+
+  <link rel="shortcut icon" href="/favicon.ico" type="image/png" />
+  <meta name="description" content="JAVA笔记基础语法变量程序通过改变变量改变整个程序 在java中变量需要先声明才能使用 常量常量的值不可修改 final可以用于声明属性，方法和类，当final修饰属性时，代表该属性一旦被分配内存空间就必须初始化。 常量名必须大写 final double PI &#x3D; 3.14; 常量也可以先声明，再进行赋值，但只能赋值一次 public class FinalVar{     public st">
+<meta property="og:type" content="article">
+<meta property="og:title" content="JAVA笔记">
+<meta property="og:url" content="http://rigblog.top/2020/03/13/JAVA%E7%AC%94%E8%AE%B0/index.html">
+<meta property="og:site_name" content="Rig的博客">
+<meta property="og:description" content="JAVA笔记基础语法变量程序通过改变变量改变整个程序 在java中变量需要先声明才能使用 常量常量的值不可修改 final可以用于声明属性，方法和类，当final修饰属性时，代表该属性一旦被分配内存空间就必须初始化。 常量名必须大写 final double PI &#x3D; 3.14; 常量也可以先声明，再进行赋值，但只能赋值一次 public class FinalVar{     public st">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://doc.shiyanlou.com/document-uid79144labid1048timestamp1434006344973.png/wm">
+<meta property="article:published_time" content="2020-03-13T05:41:41.164Z">
+<meta property="article:modified_time" content="2020-03-02T05:40:32.466Z">
+<meta property="article:author" content="rig">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://doc.shiyanlou.com/document-uid79144labid1048timestamp1434006344973.png/wm">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/combine/gh/nexmoe/nexmoe.github.io@latest/css/style.css,npm/highlight.js@9.15.8/styles/atom-one-dark.css,gh/nexmoe/nexmoe.github.io@latest/lib/mdui_043tiny/css/mdui.css,gh/nexmoe/nexmoe.github.io@latest/lib/iconfont/iconfont.css" crossorigin>
+  
+  <!--<link rel="stylesheet" href="/css/style.css?v=1584078131226">-->
+
+   
+    <style>
+      .nexmoe-avatar img:hover {
+        -webkit-transform: rotateZ(360deg);
+        -moz-transform: rotateZ(360deg);
+        transform: rotateZ(360deg);
+      }	
+    </style>
+  
+<meta name="generator" content="Hexo 4.2.0"></head>
+
+<body class="mdui-drawer-body-left">
+  
+  <div id="nexmoe-background">
+    <div class="nexmoe-bg" style="background-image: url(https://s2.ax1x.com/2020/02/18/3ki2wV.jpg)"></div>
+    <div class="mdui-appbar mdui-shadow-0">
+      <div class="mdui-toolbar">
+        <a mdui-drawer="{target: '#drawer', swipe: true}" title="menu" class="mdui-btn mdui-btn-icon mdui-ripple"><i class="mdui-icon nexmoefont icon-menu"></i></a>
+        <div class="mdui-toolbar-spacer"></div>
+        <!--<a href="javascript:;" class="mdui-btn mdui-btn-icon"><i class="mdui-icon material-icons">search</i></a>-->
+        <a href="/" title="rig" class="mdui-btn mdui-btn-icon"><img src="https://s2.ax1x.com/2020/02/18/3kpyVS.jpg" alt="rig"></a>
+       </div>
+    </div>
+  </div>
+  <div id="nexmoe-header">
+      <div class="nexmoe-drawer mdui-drawer" id="drawer">
+    <div class="nexmoe-avatar mdui-ripple">
+        <a href="/" title="rig">
+            <img src="https://s2.ax1x.com/2020/02/18/3kpyVS.jpg" alt="rig" alt="rig">
+        </a>
+    </div>
+    <div class="nexmoe-count">
+        <div><span>文章</span>3</div>
+        <div><span>标签</span>0</div>
+        <div><span>分类</span>0</div>
+    </div>
+    <div class="nexmoe-list mdui-list" mdui-collapse="{accordion: true}">
+        
+        <a class="nexmoe-list-item mdui-list-item mdui-ripple" href="/" title="回到首页">
+            <i class="mdui-list-item-icon nexmoefont icon-home"></i>
+            <div class="mdui-list-item-content">
+                回到首页
+            </div>
+        </a>
+        
+        <a class="nexmoe-list-item mdui-list-item mdui-ripple" href="/archives" title="文章归档">
+            <i class="mdui-list-item-icon nexmoefont icon-container"></i>
+            <div class="mdui-list-item-content">
+                文章归档
+            </div>
+        </a>
+        
+        <a class="nexmoe-list-item mdui-list-item mdui-ripple" href="/about.html" title="关于博客">
+            <i class="mdui-list-item-icon nexmoefont icon-info-circle"></i>
+            <div class="mdui-list-item-content">
+                关于博客
+            </div>
+        </a>
+        
+        <a class="nexmoe-list-item mdui-list-item mdui-ripple" href="/PY.html" title="我的朋友">
+            <i class="mdui-list-item-icon nexmoefont icon-unorderedlist"></i>
+            <div class="mdui-list-item-content">
+                我的朋友
+            </div>
+        </a>
+        
+    </div>
+    <aside id="nexmoe-sidebar">
+  
+  <div class="nexmoe-widget-wrap">
+    <div class="nexmoe-widget nexmoe-search">
+        <form id="search_form" action_e="https://cn.bing.com/search?q=site:nexmoe.com" onsubmit="return search();">
+            <label><input id="search_value" name="q" type="search" placeholder="搜索"></label>
+        </form>
+    </div>
+</div>
+  
+  <div class="nexmoe-widget-wrap">
+    <h3 class="nexmoe-widget-title">社交按钮</h3>
+    <div class="nexmoe-widget nexmoe-social">
+        <a class="mdui-ripple" href="https://space.bilibili.com/73892108" target="_blank" mdui-tooltip="{content: '哔哩哔哩'}" style="color: rgb(231, 106, 141);background-color: rgba(231, 106, 141, .15);">
+            <i class="nexmoefont icon-bilibili"></i>
+        </a><a class="mdui-ripple" href="https://github.com/X-RIG/" target="_blank" mdui-tooltip="{content: 'GitHub'}" style="color: rgb(25, 23, 23);background-color: rgba(25, 23, 23, .15);">
+            <i class="nexmoefont icon-github"></i>
+        </a>
+    </div>
+</div>
+  
+  
+
+  
+  
+  
+  
+  <div class="nexmoe-widget-wrap">
+    <h3 class="nexmoe-widget-title">文章归档</h3>
+    <div class="nexmoe-widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/03/">三月 2020</a></li></ul>
+    </div>
+  </div>
+
+
+  
+
+</aside>
+
+
+    <div class="nexmoe-copyright">
+        &copy; 2020 rig
+        Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+        & <a href="https://nexmoe.com/hexo-theme-nexmoe.html" target="_blank">Nexmoe</a>
+    </div>
+</div><!-- .nexmoe-drawer -->
+  </div>
+ 
+  <div id="nexmoe-content">
+    <div class="nexmoe-primary">
+        <div class="nexmoe-post">
+  
+      <div class="nexmoe-post-cover" style="padding-bottom: 66.66666666666666%;"> 
+          <img data-src="https://s2.ax1x.com/2020/02/18/3ki2wV.jpg" data-sizes="auto" alt="JAVA笔记" class="lazyload">
+          <h1>JAVA笔记</h1>
+      </div>
+  
+  
+
+  <div class="nexmoe-post-meta" style="margin:10px 0!important;">
+    <a><i class="nexmoefont icon-calendar-fill"></i>2020年03月13日</a>
+    <a><i class="nexmoefont icon-areachart"></i>3.5k 字</a>
+    <a><i class="nexmoefont icon-time-circle-fill"></i>大概 16 分钟</a>
+</div>
+
+  <div class="nexmoe-post-right">
+    
+  </div>
+
+  <article>
+    <h1 id="JAVA笔记"><a href="#JAVA笔记" class="headerlink" title="JAVA笔记"></a>JAVA笔记</h1><h2 id="基础语法"><a href="#基础语法" class="headerlink" title="基础语法"></a>基础语法</h2><h3 id="变量"><a href="#变量" class="headerlink" title="变量"></a>变量</h3><p>程序通过改变变量改变整个程序</p>
+<p>在java中变量需要先声明才能使用</p>
+<h3 id="常量"><a href="#常量" class="headerlink" title="常量"></a>常量</h3><p>常量的值不可修改</p>
+<p>final可以用于声明属性，方法和类，当final修饰属性时，代表该属性一旦被分配内存空间就必须初始化。</p>
+<p>常量名必须大写</p>
+<pre><code class="java">final double PI = 3.14;</code></pre>
+<p>常量也可以先声明，再进行赋值，但只能赋值一次</p>
+<pre><code class="java">public class FinalVar{
+    public static void main(String[] args){
+        final String FINAL_STRING=&quot;shiyanlou&quot;;
+        System.out.println(FINAL_STRING);
+    }
+}</code></pre>
+<h3 id="数据类型"><a href="#数据类型" class="headerlink" title="数据类型"></a>数据类型</h3><table>
+<thead>
+<tr>
+<th align="center">数据类型</th>
+<th align="center">默认值</th>
+<th align="center">存储格式</th>
+<th align="center">数据范围</th>
+<th>包装类型</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">short</td>
+<td align="center">0</td>
+<td align="center">2 个字节</td>
+<td align="center">-32,768 到 32767</td>
+<td>Short</td>
+</tr>
+<tr>
+<td align="center">int</td>
+<td align="center">0</td>
+<td align="center">4 个字节</td>
+<td align="center">-2,147,483,648 到 2,147,483,647</td>
+<td>Integer</td>
+</tr>
+<tr>
+<td align="center">byte</td>
+<td align="center">0</td>
+<td align="center">1 个字节</td>
+<td align="center">-128 到 127</td>
+<td>Byte</td>
+</tr>
+<tr>
+<td align="center">char</td>
+<td align="center">空</td>
+<td align="center">2 个字节</td>
+<td align="center">Unicode 的字符范围：’\u0000’（即为 0）到’\uffff’（即为 65,535）</td>
+<td>Character</td>
+</tr>
+<tr>
+<td align="center">long</td>
+<td align="center">0L 或 0l</td>
+<td align="center">8 个字节</td>
+<td align="center">-9,223,372,036,854,775,808 到 9,223,372,036, 854,775,807</td>
+<td>Long</td>
+</tr>
+<tr>
+<td align="center">float</td>
+<td align="center">0.0F 或 0.0f</td>
+<td align="center">4 个字节</td>
+<td align="center">32 位 IEEEE-754 单精度范围</td>
+<td>Float</td>
+</tr>
+<tr>
+<td align="center">double</td>
+<td align="center">0.0 或 0.0D(d)</td>
+<td align="center">8 个字节</td>
+<td align="center">64 位 IEEE-754 双精度范围</td>
+<td>Double</td>
+</tr>
+<tr>
+<td align="center">boolean</td>
+<td align="center">false</td>
+<td align="center">1 位</td>
+<td align="center">true 或 false</td>
+<td>Boolean</td>
+</tr>
+</tbody></table>
+<h4 id="整数"><a href="#整数" class="headerlink" title="整数"></a>整数</h4><p>byte、short、int、long 四种基本数据类型表示整数，需要注意的是 long 类型，使用 long 修饰的变量需要在数值后面加上 L 或者 l，比如<code>long num=1L;</code>，一般使用大写 L，为了避免小写 l 与数值 1 混淆。</p>
+<h4 id="浮点数"><a href="#浮点数" class="headerlink" title="浮点数"></a>浮点数</h4><p>float 和 double 类型表示浮点数，即可以表示小数部分。需要注意的是 float 类型的数值后面需要加上 F 或者 f，否则会被当成 double 类型处理。double 类型的数值可以加上 D 或 d，也可以不加。</p>
+<h4 id="char类型"><a href="#char类型" class="headerlink" title="char类型"></a>char类型</h4><p>char 类型用于表示单个字符。需要将字符用单引号括起来<code>char a=&#39;a&#39;</code>，char 可以和整数互相转换，如果字符<code>a</code>也可以写成<code>char a=97</code>。也可以用十六进制表示<code>char a = &#39;\u0061&#39;</code>。</p>
+<h4 id="boolean类型"><a href="#boolean类型" class="headerlink" title="boolean类型"></a>boolean类型</h4><p>boolean 类型（布尔类型）用于表示真值<code>true</code>或者假值<code>false</code>，Java 中布尔值不能和整数类型或者其它类型互相转换。</p>
+<h3 id="String"><a href="#String" class="headerlink" title="String"></a>String</h3><p>Java 中使用 String 类来定义一个字符串，字符串是<code>常量</code>，它们的值在创建之后不能更改。字符串缓冲区支持可变的字符串。</p>
+<p>String 对象的初始化格式有如下两种：</p>
+<pre><code>String s0 = &quot;abc&quot;;
+
+String s1 = new String(&quot;abd&quot;);</code></pre><h4 id="计算字符串长度"><a href="#计算字符串长度" class="headerlink" title="计算字符串长度"></a>计算字符串长度</h4><pre><code class="java">//方法原型
+public int length(){
+String s1 = &quot;abc&quot;;
+String s2 = &quot;Java语言&quot;;
+int len1 = s1.length();
+int len2 = s2.length();
+}</code></pre>
+<h4 id="字符串比较"><a href="#字符串比较" class="headerlink" title="字符串比较"></a>字符串比较</h4><p>equals() 方法,该方法的作用是判断两个字符串对象的内容是否相同。如果相同则返回 true，否则返回 false。</p>
+<p>如果想忽略掉大小写关系，比如：java 和 Java 是一样的，那怎么办呢？可以调用<code>equalsIgnoreCase()</code>方法，其用法与 equals 一致，不过它会忽视大小写。</p>
+<pre><code class="java">public class StringTest {
+    public static void main(String[] args){
+        String s = new String(&quot;Java&quot;);
+        String m = &quot;java&quot;;
+        System.out.println(&quot;用equals()比较，java和Java结果为&quot;+s.equals(m));
+        System.out.println(&quot;用equalsIgnoreCase()比较，java和Java结果为&quot;+s.equalsIgnoreCase(m));
+    }
+}</code></pre>
+<p>使用<code>&quot;==&quot;</code>比较的是两个对象在内存中存储的地址是否一样。例如:</p>
+<pre><code class="java">         String s1 = &quot;abc&quot;;
+         String s2 = new String(&quot;abc&quot;);
+         boolean b = (s1 == s2);</code></pre>
+<h4 id="字符串连接"><a href="#字符串连接" class="headerlink" title="字符串连接"></a>字符串连接</h4><p>字符串连接有两种方法：</p>
+<ol>
+<li>使用<code>+</code>，比如<code>String s = &quot;Hello &quot; + &quot;World!&quot;</code></li>
+<li>使用 String 类的 concat() 方法</li>
+</ol>
+<pre><code class="java">String s0 = new String(&quot;Hello &quot;);
+String s1 = &quot;World&quot; + &quot;!&quot;;   //+号连接
+String s2 = s0.concat(s1); //concat()方法连接
+System.out.println(s2);</code></pre>
+<h4 id="charAt-方法"><a href="#charAt-方法" class="headerlink" title="charAt()方法"></a>charAt()方法</h4><p>charAt()方法的作用是按照索引值(规定字符串中第一个字符的索引值是 0，第二个字符的索引值是 1，依次类推)，获得字符串中的指定字符。例如：</p>
+<pre><code class="java">     String s = &quot;abc&quot;;
+     char c = s.charAt(1);</code></pre>
+<h4 id="字符串常用提取方法"><a href="#字符串常用提取方法" class="headerlink" title="字符串常用提取方法"></a>字符串常用提取方法</h4><table>
+<thead>
+<tr>
+<th align="center">方法</th>
+<th align="center">返回值</th>
+<th align="center">功能描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">indexOf(char ch)</td>
+<td align="center">int</td>
+<td align="center">搜索字符 ch 第一次出现的索引</td>
+</tr>
+<tr>
+<td align="center">indexOf(String value)</td>
+<td align="center">int</td>
+<td align="center">搜索字符串 value 第一次出现的索引</td>
+</tr>
+<tr>
+<td align="center">lastIndexOf(char ch)</td>
+<td align="center">int</td>
+<td align="center">搜索字符 ch 最后一次出现的索引</td>
+</tr>
+<tr>
+<td align="center">lastIndexOf(String value)</td>
+<td align="center">int</td>
+<td align="center">搜索字符串 value 最后一次出现的索引</td>
+</tr>
+<tr>
+<td align="center">substring(int index)</td>
+<td align="center">String</td>
+<td align="center">提取从位置索引开始到结束的字符串</td>
+</tr>
+<tr>
+<td align="center">substring(int beginindex, int endindex)</td>
+<td align="center">String</td>
+<td align="center">提取 beginindex 和 endindex 之间的字符串部分</td>
+</tr>
+<tr>
+<td align="center">trim()</td>
+<td align="center">String</td>
+<td align="center">返回一个前后不含任何空格的调用字符串的副本</td>
+</tr>
+</tbody></table>
+<pre><code class="java">public class StringTest {
+    public static void main(String[] args) {
+         String s = &quot;abcdefabc&quot;;
+         System.out.println(&quot;字符a第一次出现的位置为&quot;+s.indexOf(&#39;a&#39;));
+         System.out.println(&quot;字符串bc第一次出现的位置为&quot;+s.indexOf(&quot;bc&quot;));
+         System.out.println(&quot;字符a最后一次出现的位置为&quot;+s.lastIndexOf(&#39;a&#39;));
+         System.out.println(&quot;从位置3开始到结束的字符串&quot;+s.substring(3));
+         System.out.println(&quot;从位置3开始到6之间的字符串&quot;+s.substring(3,6));
+    }
+}</code></pre>
+<h3 id="运算符"><a href="#运算符" class="headerlink" title="运算符"></a>运算符</h3><h4 id="算术运算符"><a href="#算术运算符" class="headerlink" title="算术运算符"></a>算术运算符</h4><table>
+<thead>
+<tr>
+<th>算术运算符</th>
+<th>名称</th>
+<th>描述</th>
+<th>类型</th>
+<th>举例</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>+</td>
+<td>加法</td>
+<td>相加运算符两侧的值</td>
+<td>双目运算符</td>
+<td>a + b 等于 8</td>
+</tr>
+<tr>
+<td>-</td>
+<td>减法</td>
+<td>左操作数减去右操作数</td>
+<td>双目运算符</td>
+<td>a - b 等于 2</td>
+</tr>
+<tr>
+<td>*</td>
+<td>乘法</td>
+<td>相乘操作符两侧的值</td>
+<td>双目运算符</td>
+<td>a * b 等于 15</td>
+</tr>
+<tr>
+<td>/</td>
+<td>除法</td>
+<td>左操作数除以右操作数</td>
+<td>双目运算符</td>
+<td>a / b 等于 1</td>
+</tr>
+<tr>
+<td>%</td>
+<td>取余</td>
+<td>左操作数除右操作数的余数</td>
+<td>双目运算符</td>
+<td>a % b 等于 2</td>
+</tr>
+<tr>
+<td>++</td>
+<td>自增</td>
+<td>操作数的值增加 1</td>
+<td>单目运算符</td>
+<td>++i（或 i++） 等于 2</td>
+</tr>
+<tr>
+<td>–</td>
+<td>自减</td>
+<td>操作数的值减少 1</td>
+<td>单目运算符</td>
+<td>–i（或 i–） 等于 0</td>
+</tr>
+</tbody></table>
+<p>其中，自增(++)和自减(–)运算符有两种写法：<strong>前缀（++i,–i）</strong>和<strong>后缀（i++,i–）</strong>。</p>
+<ul>
+<li>前缀自增自减法(++i,–i): 先进行自增或者自减运算，再进行表达式运算。</li>
+<li>后缀自增自减法(i++,i–): 先进行表达式运算，再进行自增或者自减运算</li>
+</ul>
+<pre><code class="java">public class ArithmeticOperation {
+    public static void main(String args[]) {
+        int a = 5;
+        int b = 3;
+        int c = 3;
+        int d = 3;
+        System.out.println(&quot;a + b = &quot; + (a + b));
+        System.out.println(&quot;a - b = &quot; + (a - b));
+        System.out.println(&quot;a * b = &quot; + (a * b));
+        System.out.println(&quot;a / b = &quot; + (a / b));
+        System.out.println(&quot;a % b = &quot; + (a % b));
+        System.out.println(&quot;a++ = &quot; + (a++));
+        System.out.println(&quot;++a = &quot; + (++a));
+        System.out.println(&quot;b-- = &quot; + (b--));
+        System.out.println(&quot;--b = &quot; + (--b));
+        System.out.println(&quot;c++ = &quot; + (c++));
+        System.out.println(&quot;++d = &quot; + (++d));
+    }
+}
+
+a + b = 8
+a - b = 2
+a * b = 15
+a / b = 1
+a % b = 2
+a++ = 5
+++a = 7
+b-- = 3
+--b = 1
+c++ = 3
+++d = 4</code></pre>
+<h4 id="位运算符"><a href="#位运算符" class="headerlink" title="位运算符"></a>位运算符</h4><p>Java 定义了位运算符，应用于整数类型(int)，长整型(long)，短整型(short)，字符型(char)，和字节型(byte)等类型。位运算时先转换为二进制，再按位运算。</p>
+<p>表格中的例子中，变量<code>a</code>的值为 60，变量<code>b</code>的值为 13：</p>
+<table>
+<thead>
+<tr>
+<th>位运算符</th>
+<th>名称</th>
+<th>描述</th>
+<th>举例</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>&amp;</td>
+<td>按位与</td>
+<td>如果相对应位都是 1，则结果为 1，否则为 0</td>
+<td>（a＆b），得到 12，即 0000 1100</td>
+</tr>
+<tr>
+<td>丨</td>
+<td>按位或</td>
+<td>如果相对应位都是 0，则结果为 0，否则为 1</td>
+<td>（ a 丨 b ）得到 61，即 0011 1101</td>
+</tr>
+<tr>
+<td>^</td>
+<td>按位异或</td>
+<td>如果相对应位值相同，则结果为 0，否则为 1</td>
+<td>（a^b）得到 49，即 0011 0001</td>
+</tr>
+<tr>
+<td>~</td>
+<td>按位补</td>
+<td>翻转操作数的每一位，即 0 变成 1，1 变成 0</td>
+<td>（〜a）得到-61，即 1100 0011</td>
+</tr>
+<tr>
+<td>&lt;&lt;</td>
+<td>按位左移</td>
+<td>左操作数按位左移右操作数指定的位数</td>
+<td>a&lt;&lt;2 得到 240，即 1111 0000</td>
+</tr>
+<tr>
+<td>&gt;&gt;</td>
+<td>按位右移</td>
+<td>左操作数按位右移右操作数指定的位数</td>
+<td>a&gt;&gt;2 得到 15 即 1111</td>
+</tr>
+<tr>
+<td>&gt;&gt;&gt;</td>
+<td>按位右移补零</td>
+<td>左操作数的值按右操作数指定的位数右移，移动得到的空位以零填充</td>
+<td>a&gt;&gt;&gt;2 得到 15 即 0000 1111</td>
+</tr>
+</tbody></table>
+<pre><code class="java">public class BitOperation {
+    public static void main(String args[]) {
+        int a = 60;
+        int b = 13;
+        System.out.println(&quot;a &amp; b = &quot; + (a &amp; b));
+        System.out.println(&quot;a | b = &quot; + (a | b));
+        System.out.println(&quot;a ^ b = &quot; + (a ^ b));
+        System.out.println(&quot;~a = &quot; + (~a));
+        System.out.println(&quot;a &lt;&lt; 2 = &quot; + (a &lt;&lt; 2));
+        System.out.println(&quot;a &gt;&gt; 2 = &quot; + (a &gt;&gt; 2));
+        System.out.println(&quot;a &gt;&gt;&gt; 2 = &quot; + (a &gt;&gt;&gt; 2));
+    }
+}
+
+a &amp; b = 12
+a | b = 61
+a ^ b = 49
+~a = -61
+a &lt;&lt; 2 = 240
+a &gt;&gt; 2 = 15
+a &gt;&gt;&gt; 2 = 15</code></pre>
+<h4 id="逻辑运算符"><a href="#逻辑运算符" class="headerlink" title="逻辑运算符"></a>逻辑运算符</h4><p>逻辑运算符是通过运算符将操作数或等式进行逻辑判断的语句。</p>
+<p>假设布尔变量 a 为真，变量 b 为假：</p>
+<table>
+<thead>
+<tr>
+<th>逻辑运算符</th>
+<th>名称</th>
+<th>描述</th>
+<th>类型</th>
+<th>举例</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>&amp;&amp;</td>
+<td>与</td>
+<td>当且仅当两个操作数都为真，条件才为真</td>
+<td>双目运算符</td>
+<td>（a &amp;&amp; b）为假</td>
+</tr>
+<tr>
+<td>｜｜</td>
+<td>或</td>
+<td>两个操作数任何一个为真，条件为真</td>
+<td>双目运算符</td>
+<td>（a ｜｜ b）为真</td>
+</tr>
+<tr>
+<td>！</td>
+<td>非</td>
+<td>用来反转操作数的逻辑状态。如果条件为真，则逻辑非运算符将得到假</td>
+<td>单目运算符</td>
+<td>（!a）为假</td>
+</tr>
+<tr>
+<td>^</td>
+<td>异或</td>
+<td>如果两个操作数逻辑相同，则结果为假，否则为真</td>
+<td>双目运算符</td>
+<td>（a ^ b）为真</td>
+</tr>
+</tbody></table>
+<pre><code class="java">public class LogicOperation {
+    public static void main(String args[]) {
+        boolean a = true;
+        boolean b = false;
+        System.out.println(&quot;a &amp;&amp; b = &quot; + (a &amp;&amp; b));
+        System.out.println(&quot;a || b = &quot; + (a || b));
+        System.out.println(&quot;!a = &quot; + (!a));
+        System.out.println(&quot;a ^ b = &quot; + (a ^ b));
+    }
+}
+
+a &amp;&amp; b = false
+a || b = true
+!a = false
+a ^ b = true</code></pre>
+<h4 id="关系运算符"><a href="#关系运算符" class="headerlink" title="关系运算符"></a>关系运算符</h4><p>关系运算符生成的是一个 boolean（布尔）结果，它们计算的是操作数的值之间的关系。如果关系是真实的，结果为 true（真），否则，结果为 false（假）。</p>
+<p>表格中的例子中，假设变量 a 为 3，变量 b 为 5：</p>
+<table>
+<thead>
+<tr>
+<th>比较运算符</th>
+<th>名称</th>
+<th>描述</th>
+<th>举例</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>==</td>
+<td>等于</td>
+<td>判断两个操作数的值是否相等，如果相等则条件为真</td>
+<td>（a == b）为 false</td>
+</tr>
+<tr>
+<td>！=</td>
+<td>不等于</td>
+<td>判断两个操作数的值是否相等，如果值不相等则条件为真</td>
+<td>(a != b) 为 true</td>
+</tr>
+<tr>
+<td>&gt;</td>
+<td>大于</td>
+<td>判断左操作数的值是否大于右操作数的值，如果是那么条件为真</td>
+<td>（a &gt; b）为 false</td>
+</tr>
+<tr>
+<td>&lt;</td>
+<td>小于</td>
+<td>判断左操作数的值是否小于右操作数的值，如果是那么条件为真</td>
+<td>（a &lt; b）为 true</td>
+</tr>
+<tr>
+<td>&gt;=</td>
+<td>大于等于</td>
+<td>判断左操作数的值是否大于或等于右操作数的值，如果是那么条件为真</td>
+<td>（a &gt;= b）为 false</td>
+</tr>
+<tr>
+<td>&lt;=</td>
+<td>小于等于</td>
+<td>判断左操作数的值是否小于或等于右操作数的值，如果是那么条件为真</td>
+<td>（a &lt;= b）为 true</td>
+</tr>
+</tbody></table>
+<h5 id="三目运算符"><a href="#三目运算符" class="headerlink" title="三目运算符"></a>三目运算符</h5><p><strong>语法格式： 布尔表达式？表达式 1 : 表达式 2</strong></p>
+<p>运算过程：如果布尔表达式的值为<code>true</code> ，则返回 <code>表达式1</code> 的值，否则返回 <code>表达式2</code> 的值。</p>
+<pre><code class="java">public class RelationalOperation {
+    public static void main(String args[]) {
+        int a = 3;
+        int b = 5;
+        System.out.println(&quot;a == b = &quot; + (a == b));
+        System.out.println(&quot;a != b = &quot; + (a != b));
+        System.out.println(&quot;a &gt; b = &quot; + (a &gt; b));
+        System.out.println(&quot;a &lt; b = &quot; + (a &lt; b));
+        System.out.println(&quot;a &gt;= b = &quot; + (a &gt;= b));
+        System.out.println(&quot;a &lt;= b = &quot; + (a &lt;= b));
+        System.out.println(&quot;a &gt; b ? a : b = &quot; + (a &gt; b ? a : b));
+    }
+}
+
+a == b = false
+a != b = true
+a &gt; b = false
+a &lt; b = true
+a &gt;= b = false
+a &lt;= b = true
+a &gt; b ? a : b = 5</code></pre>
+<p><strong>强调</strong>：</p>
+<ul>
+<li><code>==</code>和<code>!=</code>适用于所有的基本数据类型，其他关系运算符不适用于<code>boolean</code>，因为 boolean 值只有<code>true</code>和<code>false</code>，比较没有任何意义。</li>
+<li><code>==</code>和<code>!=</code>也适用于所有对象，可以比较对象的<code>引用</code>是否相同。</li>
+</ul>
+<p><strong>引用：Java 中一切都是对象，但操作的标识符实际是对象的一个引用。</strong></p>
+<h3 id="关键字和语句"><a href="#关键字和语句" class="headerlink" title="关键字和语句"></a>关键字和语句</h3><p>Java 的关键字对 java 的编译器有特殊的意义，他们用来表示一种数据类型，或者表示程序的结构等，关键字不能用作变量名、方法名、类名、包名。</p>
+<p><img data-sizes="auto" data-src="https://doc.shiyanlou.com/document-uid79144labid1048timestamp1434006344973.png/wm" alt="avatar" class="lazyload"></p>
+<h3 id="方法"><a href="#方法" class="headerlink" title="方法"></a>方法</h3><p>Java 中的方法，可以将其看成一个功能的集合，它们是为了解决特定问题的代码组合。</p>
+<pre><code class="java">访问修饰符 返回值类型 方法名(参数列表){
+    方法体
+}
+public void functionName(Object arg){
+
+}</code></pre>
+<p>在上面的语法说明中：</p>
+<p>1.<strong>访问修饰符</strong>：代表方法允许被访问的权限范围， 可以是 public、protected、private 或者省略（default） ，其中 public 表示该方法可以被其他任何代码调用。</p>
+<p>2.<strong>返回值类型</strong>：方法返回值的类型，如果方法不返回任何值，则返回值类型指定为 void (代表无类型)；如果方法具有返回值，则需要指定返回值的类型，并且在方法体中使用 return 语句返回值。</p>
+<p>3.<strong>方法名</strong>：是方法的名字，必须使用合法的标识符。</p>
+<p>4.<strong>参数列表</strong>：是传递给方法的参数列表，参数可以有多个，多个参数间以逗号隔开，每个参数由参数类型和参数名组成，以空格隔开。当方法被调用时，传递值给参数。这个值被称为实参或变量。参数列表是指方法的参数类型、顺序和参数的个数。参数是可选的，方法可以不包含任何参数。</p>
+<p>5.<strong>方法体</strong>：方法体包含具体的语句，定义该方法的功能。</p>
+<p>根据方法是否带参、是否带返回值，可将方法分为四类：</p>
+<ul>
+<li>无参无返回值方法</li>
+<li>无参带返回值方法</li>
+<li>带参无返回值方法</li>
+<li>带参带返回值方法</li>
+</ul>
+<p>当方法定义好之后，需要调用才可以生效，我们可以通过 main 方法（main 方法是 Java 程序的入口，所以需要用它来调用）来调用它，比如：</p>
+<pre><code class="java">public class MethodDemo{
+    public static void main(String[] args){
+        method();
+    }
+    //这里要加上static关键字 应为静态方法只能调用静态方法
+    public static void method(){
+        System.out.println(&quot;方法被调用&quot;);
+    }
+}</code></pre>
+
+  </article>
+
+  <div class="nexmoe-post-meta">
+    
+    
+</div>
+
+  <div class="nexmoe-post-footer">
+    
+      
+  <div class="nexmoe-post-copyright">
+    <strong>本文作者：</strong>rig<br>
+    <strong>本文链接：</strong><a href="http://rigblog.top/2020/03/13/JAVA%E7%AC%94%E8%AE%B0/" title="http:&#x2F;&#x2F;rigblog.top&#x2F;2020&#x2F;03&#x2F;13&#x2F;JAVA%E7%AC%94%E8%AE%B0&#x2F;" target="_blank" rel="noopener">http:&#x2F;&#x2F;rigblog.top&#x2F;2020&#x2F;03&#x2F;13&#x2F;JAVA%E7%AC%94%E8%AE%B0&#x2F;</a><br>
+    
+      <strong>版权声明：</strong>本文采用 <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/cn/deed.zh" target="_blank">CC BY-NC-SA 3.0 CN</a> 协议进行许可
+    
+  </div>
+
+
+    
+    <section class="nexmoe-comment">
+    <!-- 畅言公共 js 代码 start -->
+<script id="cy_cmt_num" src="https://changyan.sohu.com/upload/plugins/plugins.list.count.js?clientId=cyuHaVIGf">
+</script>
+<!-- 畅言公共 js 代码 end -->
+<!--PC和WAP自适应版-->
+<div id="SOHUCS" sid="2020/03/13/JAVA笔记/"></div>
+<script>
+(function(){
+var appid = 'cyuHaVIGf';
+var conf = 'prod_cba330d89ed9b675229437cba56fa309';
+var width = window.innerWidth || document.documentElement.clientWidth;
+if (width < 960) {
+window.document.write('<script id="changyan_mobile_js" charset="utf-8" src="https://changyan.sohu.com/upload/mobile/wap-js/changyan_mobile.js?client_id=' + appid + '&conf=' + conf + '"><\/script>'); } else { var loadJs=function(d,a){var c=document.getElementsByTagName("head")[0]||document.head||document.documentElement;var b=document.createElement("script");b.setAttribute("type","text/javascript");b.setAttribute("charset","UTF-8");b.setAttribute("src",d);if(typeof a==="function"){if(window.attachEvent){b.onreadystatechange=function(){var e=b.readyState;if(e==="loaded"||e==="complete"){b.onreadystatechange=null;a()}}}else{b.onload=a}}c.appendChild(b)};loadJs("https://changyan.sohu.com/upload/changyan.js",function(){window.changyan.api.config({appid:appid,conf:conf})}); } })();
+</script>
+</section>
+  </div>
+</div>
+    </div>
+  </div>
+  <script src="https://cdn.jsdelivr.net/combine/npm/lazysizes@5.1.0/lazysizes.min.js,gh/highlightjs/cdn-release@9.15.8/build/highlight.min.js,npm/mdui@0.4.3/dist/js/mdui.min.js,gh/nexmoe/nexmoe.github.io@latest/js/app.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+<!--<script src="/js/app.js?v=1584078131228"></script>-->
+
+
+    <script src="https://cdn.jsdelivr.net/gh/xtaodada/xtaodada.github.io@0.0.2/copy.js"></script>
+
+
+
+  
+
+
+
+
+
+</body>
+
+</html>
